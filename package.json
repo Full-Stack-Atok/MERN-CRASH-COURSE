@@ -4,7 +4,7 @@
   "description": "Learning MongoDB Express React Node",
   "main": "index.js",
   "scripts": {
-    "dev": "node backend/server.js"
+    "dev": "nodemon backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,10 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "mongodb": "^6.13.1",
     "mongoose": "^8.10.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }

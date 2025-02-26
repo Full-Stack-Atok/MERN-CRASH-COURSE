@@ -47,5 +47,8 @@
     "statusBar.foreground": "#FFFFFF",
     "statusBar.border": "#007ACC"
   },
-  "cSpell.words": ["mern"]
+  "cSpell.words": ["mern"],
+
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000
 }

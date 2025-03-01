@@ -1,8 +1,20 @@
-import { Container, Flex, Text, HStack, Button } from '@chakra-ui/react'
-import { BsPlusSquare } from 'react-icons/bs'
+import {
+  Container,
+  Flex,
+  Text,
+  HStack,
+  Button,
+  useColorMode,
+} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-const navbar = () => {
+import { PlusSquareIcon } from '@chakra-ui/icons'
+import { IoMoon } from 'react-icons/io5'
+import { IoSun } from 'react-icons/lu'
+
+const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
     <Container maxW={'1140px'} px={4}>
       <Flex
@@ -15,23 +27,25 @@ const navbar = () => {
         }}
       >
         <Text
-          bgGradient="linear(to-r, #00FFFF, #007BFF)"
+          bgGradient='linear(to-r, #00FFFF, #007BFF)'
           bgClip='text'
           fontSize={{ base: '22px', sm: '28px' }}
           fontWeight='extrabold'
         >
           <Link to={'/'}>Product Store 🛒</Link>
         </Text>
-
         <HStack spacing='2' alignItems={'center'}>
           <Link to={'/create'}>
             <Button>
-              <BsPlusSquare></BsPlusSquare>
+              <PlusSquareIcon fontSize={20}></PlusSquareIcon>
             </Button>
           </Link>
+          <Button onClick={toggleColorMode}>
+            {colorMode === 'light' ? <IoMoon /> : <IoSun size='20' />}
+          </Button>
         </HStack>
       </Flex>
     </Container>
   )
 }
-export default navbar
+export default Navbar
